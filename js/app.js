@@ -7,14 +7,14 @@ createApp({
 		}
 	},
 	methods: {
-		fetchName(n) {
+		fetchEmail(n) {
             for(let i = 0; i < n; i++){
                 axios
 				.get('https://flynn.boolean.careers/exercises/api/random/mail')
 				.then((res) => {
 					console.log(res.data)
                     const email = res.data.response
-                    email.push(this.emails)
+                    this.emails.push(email)
                 })
                 
             }
@@ -22,6 +22,6 @@ createApp({
 		},
 	},
 	created() {
-		this.fetchName(10)
+		this.fetchEmail(10)
 	},
 }).mount('#app')
