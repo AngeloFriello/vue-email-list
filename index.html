@@ -10,8 +10,11 @@
 	</head>
 	<body>
 		<div id="app">
-            <ul>
-                <h1 :class="emails.length === 10 ? 'active' : 'none' " v-for="(email, index) in emails ">{{email}}</h1>
+            <!-- <ul>
+                <li :class="emails.length === 10 ? 'active' : 'none' " v-for="(email, index) in emails ">{{email}}</li>
+            </ul> -->
+			<ul>
+                <li v-show="emails.length === 10" v-for="(email, index) in emails ">{{email}}</li>
             </ul>
 			
 		</div>
